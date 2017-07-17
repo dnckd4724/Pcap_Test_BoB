@@ -52,7 +52,8 @@
     while(1){
       packet_data=pcap_next_ex(handle, &header, &pkt_data);
       packet = pkt_data;
-      if((*(pkt_data+12)==8)&&(*(pkt_data+13)==0)){
+
+      if((*(pkt_data+23)==6) && (*(pkt_data+12)==8) && (*(pkt_data+13)==0)){
       printf("\nDestination MAC: ");
       for(int i = 0; i < 6; i++){
           printf("%02x:",  *(pkt_data+i));
